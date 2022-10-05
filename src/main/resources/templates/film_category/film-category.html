@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table class="table-primary ">
+    <tr>
+        <th>ID Category</th>
+        <th>ID Film</th>
+        <th>Last Update</th>
+    </tr>
+    <tr th:each="ct: ${lst}">
+        <td th:text="${ct.getCategoryId()}"></td>
+        <td th:text="${ct.getFilmId()}"></td>
+        <td th:text="${ct.getLastUpdate()}"></td>
+
+    </tr>
+</table>
+</body>
+</html>

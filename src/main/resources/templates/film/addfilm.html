@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="add-film" method="post" th:object="${listfilm}">
+    <label>Title: </label>
+    <input type="text"  th:field="*{title}"/>
+    <br>
+    <label>Description: </label>
+    <input type="text"  th:field="*{description}"/>
+    <br>
+    <label>releaseYear: </label>
+    <input type="number"  th:field="*{releaseYear}"/>
+    <br>
+    <label>Language: </label>
+    <select th:field="*{languageId}">
+        <option th:each="lg : ${lstlanguage}" th:text="${lg.name}" th:value="${lg.languageId}"></option>
+    </select>
+    <br>
+    <label>original Language: </label>
+    <select th:field="*{originalLanguageId}">
+        <option th:each="lg : ${lstlanguage}" th:text="${lg.name}" th:value="${lg.languageId}"></option>
+    </select>
+    <br>
+    <label>rentalDuration: </label>
+    <input type="number"  th:field="*{rentalDuration}"/>
+    <br>
+    <label>rentalRate: </label>
+    <input type="number"  th:field="*{rentalRate}"/>
+    <br>
+    <label>length: </label>
+    <input type="number"  th:field="*{length}"/>
+    <br>
+    <label>replacementCost: </label>
+    <input type="number"  th:field="*{replacementCost}"/>
+    <br>
+    <label>rating: </label>
+    <select th:field="*{rating}">
+        <option th:value="G" selected>G</option>
+        <option th:value="PG">PG</option>
+        <option th:value="PG-13">PG-13</option>
+        <option th:value="R">R</option>
+        <option th:value="NC-17">NC-17</option>
+    </select>
+    <br>
+    <label>specialFeatures: </label>
+    <select th:field="*{specialFeatures}">
+        <option th:value="asd" selected>NULL</option>
+        <option th:value="Trailer">Trailer</option>
+        <option th:value="Commentaries">Commentaries</option>
+        <option th:value="${specnull}">Behind the Scenes</option>
+    </select>
+    <br>
+    <label>Last update: </label>
+    <input type="date"  th:field="*{lastUpdate}"/>
+    <br>
+    <button type="submit">Add</button>
+</form>
+</body>
+</html>

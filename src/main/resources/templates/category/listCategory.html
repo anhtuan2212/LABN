@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List category</title>
+</head>
+<style>
+    table, th, td {
+        border: 1px solid;
+    }
+
+</style>
+<body>
+    <h1 style="text-align: center;">List Category</h1>
+    <form action="list-category" method="get">
+        <input name="tukhoa" type="text" placeholder="Nhap tu khoa" />
+        <button type="submit">Search</button>
+    </form>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Last update</th>
+        </tr>
+        <tr th:each="category: ${danhsach}">
+            <td th:text="${category.getCategoryId()}"></td>
+            <td th:text="${category.getName()}"></td>
+            <td th:text="${category.getLastUpdate()}"></td>
+        </tr>
+    </table>
+</body>
+</html>

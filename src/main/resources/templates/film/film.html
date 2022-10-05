@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Actor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<h1>
+   FILM
+</h1>
+<form action="film" method="get">
+    <input name="tukhoa" type="text" placeholder="Nhap tu khoa" />
+    <button type="submit">Search</button>
+</form>
+<table class="table-primary ">
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>releaseYear</th>
+        <th>languageId</th>
+        <th>originalLanguageId</th>
+        <th>rentalDuration</th>
+        <th>rentalRate</th>
+        <th>length</th>
+        <th>replacementCost</th>
+        <th>rating</th>
+        <th>specialFeatures</th>
+        <th>lastUpdate</th>
+    <tr th:each="film: ${lstfilm}">
+        <td th:text="${film.getFilm_id()}"></td>
+        <td th:text="${film.getTitle()}"></td>
+        <td th:text="${film.getDescription()}"></td>
+        <td th:text="${film.getReleaseYear()}"></td>
+        <td th:text="${film.getLanguageId()}"></td>
+        <td th:text="${film.getOriginalLanguageId()}"></td>
+        <td th:text="${film.getRentalDuration()}"></td>
+        <td th:text="${film.getRentalRate()}"></td>
+        <td th:text="${film.getLength()}"></td>
+        <td th:text="${film.getReplacementCost()}"></td>
+        <td th:text="${film.getRating()}"></td>
+        <td th:text="${film.getSpecialFeatures()}"></td>
+        <td th:text="${film.getLastUpdate()}"></td>
+    </tr>
+</table>
+</body>
+</html>

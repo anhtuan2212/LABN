@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Actor</title>
+</head>
+<body>
+<h1>
+   ACTOR
+</h1>
+<form action="add-actor" method="post" th:object="${actor}">
+    <label>first name</label>
+    <input  th:field="*{firstName}"/>
+    <br>
+    <label>last name</label>
+    <input  th:field="*{lastName}"/>
+    <br>
+    <label>Last update: </label>
+    <input type="date"  th:field="*{lastUpdate}"/>
+    <br>
+    <button type="submit">them</button>
+</form>
+
+</body>
+</html>

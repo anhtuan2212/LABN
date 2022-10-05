@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ADDRESS</title>
+</head>
+<body>
+<form action="address" method="get">
+  <input name="tukhoa" type="text" placeholder="Nhap tu khoa" />
+  <button type="submit">Search</button>
+</form>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>address</th>
+    <th>address 2</th>
+    <th>district</th>
+    <th>city id</th>
+    <th>postal code</th>
+    <th>phone</th>
+    <th>last update</th>
+  </tr>
+  <tr th:each="lg :${lstadress}">
+    <td th:text="${lg.getAddressId()}"></td>
+    <td th:text="${lg.getAddress()}"></td>
+    <td th:text="${lg.getAddress2()}"></td>
+    <td th:text="${lg.getDistrict()}"></td>
+    <td th:text="${lg.getCityId()}"></td>
+    <td th:text="${lg.getPostalCode()}"></td>
+    <td th:text="${lg.getPhone()}"></td>
+    <td th:text="${lg.getLastUpdate()}"></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new category</title>
+</head>
+<body>
+<h1>
+  Them moi City
+</h1>
+<form action="add-city" method="post" th:object="${listcity}">
+    <label>Name: </label>
+    <input  th:field="*{city}"/>
+    <br>
+    <select th:field="*{countryId}" >
+       <option th:each="country : ${lstcountry}" th:text="${country.country}" th:value="${country.countryId}"></option>
+    </select>
+
+
+<!--    <div th:each="country :${lstcountry}">-->
+
+<!--        <select th:field="*{countryId}" >-->
+<!--            <option th:value="${country.getCountryId()}"></option>-->
+<!--        </select>-->
+<!--        <label th:text="${country.getCountryId()}"></label>-->
+<!--    </div>-->
+    <br>
+    <label>Last update: </label>
+    <input type="date"  th:field="*{lastUpdate}"/>
+    <br>
+    <button type="submit">Add</button>
+
+</form>
+</body>
+</html>

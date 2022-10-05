@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Language</title>
+</head>
+<body>
+<h1>Language</h1>
+<form action="showlanguage" method="get">
+    <input name="tukhoa" type="text" placeholder="Nhap tu khoa" />
+    <button type="submit">Search</button>
+</form>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>name</th>
+        <th>last update</th>
+    </tr>
+    <tr th:each="lg :${lst}">
+        <td th:text="${lg.getLanguageId()}"></td>
+        <td th:text="${lg.getName()}"></td>
+        <td th:text="${lg.getLastUpdate()}"></td>
+    </tr>
+</table>
+</body>
+</html>
